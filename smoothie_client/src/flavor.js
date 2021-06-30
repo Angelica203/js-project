@@ -1,6 +1,7 @@
 class Flavor {
     static all = []
     static flavorContainer = document.getElementById("flavor-container")
+    static flavorForm = document.getElementById("form-container")
 
     constructor({id, name, ingredient, smoothie_id}){
         this.id = id
@@ -27,6 +28,10 @@ class Flavor {
     }
 
     slapOnDom(){
-        Flavor.flavorContainer.appendChid(flavor)
+        Flavor.flavorContainer.append(this.flavorHTML())
+    }
+    renderForm(){
+        Flavor.flavorForm.innerHTML +=`
+        <form id="new`
     }
 }
