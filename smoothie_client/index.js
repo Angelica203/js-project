@@ -2,7 +2,16 @@
 const base_url = 'http://127.0.0.1:3000'
 const flavorService = new FlavorService(base_url)
 
+flavorService.getFlavors()
+
+// const smoothie = new SmoothieService(base_url)
+// Flavor.flavorForm.addEventListener('submit', handleSubmit)
 //initialization of the application
 
-
-const smoothieService = new smoothieService(base_url)
+function renderSmoothies(){
+    let smoothie = smoothies.data
+    smoothie.forEach(smoothie =>{
+        renderSmoothie(smoothie)
+    })
+}
+// const smoothieService = new smoothieService(base_url)

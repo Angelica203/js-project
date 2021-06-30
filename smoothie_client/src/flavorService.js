@@ -4,7 +4,7 @@ class FlavorService{
         this.endpoint = endpoint
     }
 
-    getFlavor(){
+    getFlavors(){
         fetch(`${this.endpoint}/flavors`)
         .then(resp => resp.json())
         .then(flavors => {

@@ -4,16 +4,27 @@ class SmoothieService{
         this.endpoint = endpoint
     }
 
-    getSmoothies(){
+ getSmoothies(){
         fetch(`${this.endpoint}/smoothies`)
         .then(resp => resp.json())
-        .then(smoothies => {
-        //     for (const smoothie of smoothies){
-        //         const s = new Smoothie(smoothie)
-        //         // s.slapOnDom()
-        //     }
-        })
+        .then(smoothies =>
+            {debugger}
+            )
+
     }
+
+    // getSmoothies(){
+    //     fetch(`${this.endpoint}/smoothies`)
+    //     .then(resp => resp.json())
+    //     .then(smoothies => {
+    //         for (const smmoothie of smoothies){
+    //             // console.log(this.name)
+    //         }
+    //         for (const smoothie of smoothie){
+    //             const s = new Smoothie(smoothie)
+    //         }
+    //     })
+    // }
     
 
 }

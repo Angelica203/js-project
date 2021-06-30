@@ -8,7 +8,7 @@ class Flavor {
         this.name = name
         this.ingredient = ingredient
         this.smoothie_id = smoothie_id
-
+        
         this.element = document.createElement('li')
         this.element.dataset.id = this.id
         this.element.id = `flavor-${this.id}`
