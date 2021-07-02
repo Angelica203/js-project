@@ -1,30 +1,22 @@
 class SmoothieService{
 
-    constructor(endpoint){
-        this.endpoint = endpoint
+    constructor(){
+        this.base_url = 'http://127.0.0.1:3000/smoothies'
     }
 
- getSmoothies(){
-        fetch(`${this.endpoint}/smoothies`)
+    getSmoothies(){
+        fetch(this.base_url)
         .then(resp => resp.json())
-        .then(smoothies =>
-            {debugger}
-            )
-
+        .then(response =>{
+            response.data.forEach(el => {
+                this.sanitizeAndInitializeSmoothie(el)   
+            })
+             
+        })
     }
 
-    // getSmoothies(){
-    //     fetch(`${this.endpoint}/smoothies`)
-    //     .then(resp => resp.json())
-    //     .then(smoothies => {
-    //         for (const smmoothie of smoothies){
-    //             // console.log(this.name)
-    //         }
-    //         for (const smoothie of smoothie){
-    //             const s = new Smoothie(smoothie)
-    //         }
-    //     })
-    // }
-    
-
+    sanitizeAndInitializeSmoothie(data){
+        let s = new Smoothie(smoothie)
+        s.slapOnDom()
+    }
 }

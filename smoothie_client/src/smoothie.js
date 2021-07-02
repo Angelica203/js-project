@@ -4,6 +4,7 @@ class Smoothie{
         this.id = id
         this.name = name
         this.image_url = image_url
+        this.service = new SmoothieService()
 
         this.element = document.createElement('li')
         this.element.dataset = this.id
@@ -15,20 +16,28 @@ class Smoothie{
 
     }
 
-
-    smoothieHTML(){
-        this.element.innerHTML +=`
-        <div>
-            <h1>${this.name}</h1>
-            <p>${this.image_url}</p>
-        </div>
-        `
-        return this.element
-    }
-    // slapOnDom(){
-    //     Smoothie.smoothieContainer.append(this.smoothieHTML())
-
+        fullRender(){
+            this.element.innerHTML +=`
+            <div>
+                <h3>${this.name}</h3>
+                <p>${this.image_url}</p>
+            </div>
+            `
+            return this.element
+        }
+    // smoothieHTML(){
+        // this.element.innerHTML +=`
+        // <div>
+        //     <h1>${this.name}</h1>
+        //     <p>${this.image_url}</p>
+        // </div>
+        // `
+    //     return this.element
     // }
+    slapOnDom(){
+        Smoothie.smoothieContainer.append(this.smoothieHTML())
+
+    }
 
 
 }       

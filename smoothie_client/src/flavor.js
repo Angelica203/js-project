@@ -12,10 +12,9 @@ class Flavor {
         this.element = document.createElement('li')
         this.element.dataset.id = this.id
         this.element.id = `flavor-${this.id}`
-
+        this.element.addEventListener('click', this.handleClick)
         Flavor.all.push(this)
     }
-
 
     flavorHTML(){
         this.element.innerHTML += `
@@ -23,6 +22,9 @@ class Flavor {
         <h3>${this.name}</h3>
         <p>${this.ingredient}</p>
         </div>
+        <button id='delete-bttn'>Delete</button>
+        <br>
+        <br>
         `
         return this.element
     }
@@ -30,8 +32,25 @@ class Flavor {
     slapOnDom(){
         Flavor.flavorContainer.append(this.flavorHTML())
     }
-    renderForm(){
+    static renderForm(){
         Flavor.flavorForm.innerHTML +=`
-        <form id="new`
+        <form id="new-flavor-form">
+
+            Name: <input type="text" id="name">       
+            Ingredient: <input type="text" id="ingredient">
+
+        <input type="submit" id="create">
+        <form>
+        `
+    
     }
+    
+    handleClick = () => {
+        if (event.target.innerText === 'Delete'){
+            flavorService.deleteFlavor(this.id)
+        }
+    }
+    
+    
 }
+
