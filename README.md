@@ -1,3 +1,5 @@
-# js-project
+below is my api side of this project
 
- Js_smoothie_bar
+https://github.com/Angelica203/Js_smoothie_bar
+
+
